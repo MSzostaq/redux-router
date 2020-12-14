@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
-import GlobalContext from "../contexts/GlobalContext";
+import { getNotifications } from "../selectors/notificationsSelectors";
 import Notification from "./Notification";
 
 const StyledNotifications = styled.ul`
@@ -19,8 +20,7 @@ const StyledNotification = styled(Notification)`
   }
 `;
 
-const Notifications = ({ className }) => {
-  const { notifications } = useContext(GlobalContext);
+const Notifications = ({ className, notifications }) => {
   return (
     <StyledNotifications className={className}>
       <AnimatePresence initial={false}>
@@ -39,4 +39,8 @@ const Notifications = ({ className }) => {
   );
 };
 
-export default Notifications;
+const mapStateToProps = (state) => ({ notifications: getNotifications(state) });
+// const mapStateToProps = ({ notifications }) => ({ notifications });
+// ES6
+
+export default connect(mapStateToProps)(Notifications);

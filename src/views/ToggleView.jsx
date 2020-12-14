@@ -1,6 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
-import GlobalContext from "../contexts/GlobalContext";
+import { addNotification } from "../actions/notificationsActions";
 import MenuToggle from "../components/MenuToggle";
 import Toggle from "../components/Toggle";
 
@@ -22,8 +23,7 @@ const Form = styled.div`
   justify-content: center;
 `;
 
-function ToggleView() {
-  const { addNotification } = useContext(GlobalContext);
+function ToggleView({ dispatch }) {
   const [value, setValue] = useState(false);
   function onValueChange(newValue) {
     setValue(newValue);
@@ -32,7 +32,7 @@ function ToggleView() {
       title: `Toggle switched ${newValue ? "on" : "off"}`,
       message: `This is ${newValue ? "good" : "bad"}.`,
     };
-    addNotification(notification);
+    dispatch(addNotification(notification));
   }
 
   return (
@@ -45,4 +45,4 @@ function ToggleView() {
   );
 }
 
-export default ToggleView;
+export default connect()(ToggleView);

@@ -1,7 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import useTimeout from "use-timeout";
+import { REMOVE_NOTIFICATION } from "../actions/notificationsActions";
 import Icon from "./Icon";
 
 const StyledNotification = styled(motion.li)`
@@ -37,20 +38,23 @@ const CloseButton = styled(Icon)`
   height: 24px;
 `;
 
-const Notification = ({ className, notification, ...rest }) => {
-  const { id, message, title, type, lifespan, onClose } = notification;
+const Notification = ({ className, dispatch, notification, ...rest }) => {
+  console.log(dispatch);
+  const { id, message, title, type } = notification;
 
-  useTimeout(() => onClose(id), lifespan);
+  function onClose() {
+    dispatch({ type: REMOVE_NOTIFICATION, payload: { id } });
+  }
 
   return (
     <StyledNotification className={className} type={type} {...rest}>
       <Header>
         <Title>{title}</Title>
-        <CloseButton icon="close" onClick={() => onClose(id)} />
+        <CloseButton icon="close" onClick={onClose} />
       </Header>
       <Message>{message}</Message>
     </StyledNotification>
   );
 };
 
-export default Notification;
+export default connect()(Notification);
