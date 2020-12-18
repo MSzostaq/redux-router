@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import icons from "../constants/icons";
+import { motion } from "framer-motion";
 
-const Svg = styled.svg`
+const Svg = styled(motion.svg)`
   display: inline-block;
   fill: currentColor;
   outline: 0;

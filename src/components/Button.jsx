@@ -1,14 +1,13 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-const Button = styled.button`
+const Button = styled(motion.button)`
   background-color: #d3d3d3;
   border-radius: 24px;
-  font-family: ui-sans-serif;
+  font-family: sans-serif;
   font-size: 24px;
-  font-weight: bold;
   margin: 8px;
   padding: 8px;
-  text-transform: uppercase;
   width: 240px;
   height: 48px;
 `;

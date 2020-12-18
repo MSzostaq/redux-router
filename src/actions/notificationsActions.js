@@ -6,7 +6,7 @@ export const addNotification = ({
   type = "ok",
   title = "",
   message = "",
-  lifespan = 5000,
+  lifespan = 100,
 }) => ({
   type: ADD_NOTIFICATION,
   payload: { id, type, title, message, lifespan },
