@@ -24,7 +24,7 @@ const CloseButton = styled(Icon)`
   cursor: pointer;
   position: absolute;
   top: 8px;
-  left: 8px;
+  right: 8px;
   width: 48px;
   height: 48px;
 `;
