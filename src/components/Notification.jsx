@@ -1,8 +1,6 @@
 import React from "react";
-import { connect } from "react-redux";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { REMOVE_NOTIFICATION } from "../actions/notificationsActions";
 import Icon from "./Icon";
 
 const StyledNotification = styled(motion.li)`
@@ -38,23 +36,26 @@ const CloseButton = styled(Icon)`
   height: 24px;
 `;
 
-const Notification = ({ className, dispatch, notification, ...rest }) => {
-  console.log(dispatch);
-  const { id, message, title, type } = notification;
-
-  function onClose() {
-    dispatch({ type: REMOVE_NOTIFICATION, payload: { id } });
-  }
+const Notification = ({
+  className,
+  notification,
+  onCloseButtonClick,
+  ...rest
+}) => {
+  const { message, title, type } = notification;
 
   return (
     <StyledNotification className={className} type={type} {...rest}>
       <Header>
         <Title>{title}</Title>
-        <CloseButton icon="close" onClick={onClose} />
+        <CloseButton
+          icon="close"
+          onClick={() => onCloseButtonClick(notification)}
+        />
       </Header>
       <Message>{message}</Message>
     </StyledNotification>
   );
 };
 
-export default connect()(Notification);
+export default Notification;

@@ -6,9 +6,10 @@ export const addNotification = ({
   type = "ok",
   title = "",
   message = "",
-  lifespan = 100,
+  lifespan = 5000,
 }) => ({
   type: ADD_NOTIFICATION,
   payload: { id, type, title, message, lifespan },
 });
 export const REMOVE_NOTIFICATION = "REMOVE_NOTIFICATION";
+export const CLOSE_NOTIFICATION = "CLOSE_NOTIFICATION";
