@@ -1,6 +1,7 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import styled from "styled-components";
+import DropdownView from "./DropdownView";
 import OtherView from "./OtherView";
 import Sidebar from "../components/Sidebar";
 import ToggleView from "./ToggleView";
@@ -24,6 +25,9 @@ function Dashboard() {
           </Route>
           <Route path="/other">
             <OtherView />
+          </Route>
+          <Route path="/dropdown">
+            <DropdownView />
           </Route>
           <Redirect to="/toggle" />
         </Switch>

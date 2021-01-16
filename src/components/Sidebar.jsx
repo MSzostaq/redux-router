@@ -51,6 +51,9 @@ const Sidebar = () => {
       <StyledButton as={Link} to="/other">
         Night
       </StyledButton>
+      <StyledButton as={Link} to="/dropdown">
+        Dropdown
+      </StyledButton>
     </StyledSidebar>
   ) : null;
 };
