@@ -11,7 +11,7 @@ const Svg = styled(motion.svg)`
 `;
 
 function Icon({ className, icon, onClick }) {
-  const { path, size } = icons[icon];
+  const { path = "", size = 24 } = icons[icon] || {};
   return (
     <Svg
       className={className}

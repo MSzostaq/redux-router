@@ -1,10 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import "./App.css";
 // import useInterval from "./hooks/useInterval";
 import GlobalProvider from "./components/GlobalProvider";
 import Notifications from "./components/Notifications";
 import Routes from "./components/Routes";
+
+const StyledApp = styled.div`
+  height: 100%;
+`;
 
 const AppNotifications = styled(Notifications)`
   position: fixed;
@@ -16,12 +19,12 @@ function App() {
   // useInterval(() => addNotification(Math.random() < 0.5), 200);
 
   return (
-    <div className="App">
+    <StyledApp>
       <GlobalProvider>
         <Routes />
         <AppNotifications />
       </GlobalProvider>
-    </div>
+    </StyledApp>
   );
 }
 
