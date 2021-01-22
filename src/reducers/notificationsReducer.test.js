@@ -1,8 +1,8 @@
 import {
   ADD_NOTIFICATION,
   REMOVE_NOTIFICATION,
-} from "../actions/notificationsActions";
-import reducer from "./notificationsReducer";
+} from "actions/notificationsActions";
+import reducer from "reducers/notificationsReducer";
 
 describe("notifications reducer", () => {
   it("should return the initial state", () => {

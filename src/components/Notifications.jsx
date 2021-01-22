@@ -2,8 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
-import { CLOSE_NOTIFICATION } from "../actions/notificationsActions";
-import { getNotifications } from "../selectors/notificationsSelectors";
+import { CLOSE_NOTIFICATION } from "actions/notificationsActions";
+import { getNotifications } from "selectors/notificationsSelectors";
 import Notification from "./Notification";
 
 const StyledNotifications = styled.ul`

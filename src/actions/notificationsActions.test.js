@@ -1,4 +1,7 @@
-import { addNotification, ADD_NOTIFICATION } from "./notificationsActions";
+import {
+  addNotification,
+  ADD_NOTIFICATION,
+} from "actions/notificationsActions";
 
 describe("notifications actions", () => {
   describe("addNotification", () => {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import GlobalContext from "../contexts/GlobalContext";
+import GlobalContext from "contexts/GlobalContext";
 
 const GlobalProvider = ({ children }) => {
   const [state, setState] = useState({ isMenuOpen: false });

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Icon from "./Icon";
+import Icon from "components/Icon";
 
 const ToggleButton = styled.button`
   align-items: center;

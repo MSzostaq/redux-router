@@ -3,7 +3,7 @@ import {
   ADD_NOTIFICATION,
   CLOSE_NOTIFICATION,
   REMOVE_NOTIFICATION,
-} from "../actions/notificationsActions";
+} from "actions/notificationsActions";
 
 function* onAddNotification(action) {
   const { id, lifespan } = action.payload;

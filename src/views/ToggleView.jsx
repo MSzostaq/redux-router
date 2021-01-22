@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import { addNotification } from "../actions/notificationsActions";
-import MenuToggle from "../components/MenuToggle";
-import Toggle from "../components/Toggle";
+import { addNotification } from "actions/notificationsActions";
+import MenuToggle from "components/MenuToggle";
+import Toggle from "components/Toggle";
 
 const View = styled.div`
   height: 100%;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import MenuToggle from "../components/MenuToggle";
-import Dropdown from "../components/Dropdown";
+import MenuToggle from "components/MenuToggle";
+import Dropdown from "components/Dropdown";
 
 const View = styled.div`
   height: 100%;

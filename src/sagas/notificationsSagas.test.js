@@ -1,10 +1,10 @@
 import { expectSaga } from "redux-saga-test-plan";
-import saga from "../sagas";
+import saga from "sagas";
 import {
   ADD_NOTIFICATION,
   CLOSE_NOTIFICATION,
   REMOVE_NOTIFICATION,
-} from "../actions/notificationsActions";
+} from "actions/notificationsActions";
 
 describe("notifications sagas", () => {
   describe("onAddNotification", () => {

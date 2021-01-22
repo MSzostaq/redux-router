@@ -1,10 +1,9 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import styled from "styled-components";
-import DropdownView from "./DropdownView";
-import OtherView from "./OtherView";
-import Sidebar from "../components/Sidebar";
-import ToggleView from "./ToggleView";
+import Sidebar from "components/Sidebar";
+import DropdownView from "views/DropdownView";
+import ToggleView from "views/ToggleView";
 
 const ViewWrapper = styled.div`
   height: 100%;
@@ -22,9 +21,6 @@ function Dashboard() {
         <Switch>
           <Route path="/toggle">
             <ToggleView />
-          </Route>
-          <Route path="/other">
-            <OtherView />
           </Route>
           <Route path="/dropdown">
             <DropdownView />

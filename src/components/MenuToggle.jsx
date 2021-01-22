@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import GlobalContext from "../contexts/GlobalContext";
-import Icon from "./Icon";
+import GlobalContext from "contexts/GlobalContext";
+import Icon from "components/Icon";
 
 const ToggleButton = styled.button`
   color: #bdbdbd;

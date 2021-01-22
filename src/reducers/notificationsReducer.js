@@ -1,7 +1,7 @@
 import {
   ADD_NOTIFICATION,
   REMOVE_NOTIFICATION,
-} from "../actions/notificationsActions";
+} from "actions/notificationsActions";
 
 const initialState = [];
 
