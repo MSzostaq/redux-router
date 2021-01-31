@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 // import useInterval from "./hooks/useInterval";
 import GlobalProvider from "components/GlobalProvider";
+import ModalsProvider from "components/ModalsProvider";
+import Modals from "components/Modals";
 import Notifications from "components/Notifications";
 import Routes from "components/Routes";
 
@@ -21,8 +23,11 @@ function App() {
   return (
     <StyledApp>
       <GlobalProvider>
-        <Routes />
-        <AppNotifications />
+        <ModalsProvider>
+          <Routes />
+          <AppNotifications />
+          <Modals />
+        </ModalsProvider>
       </GlobalProvider>
     </StyledApp>
   );
