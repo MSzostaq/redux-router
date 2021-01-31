@@ -15,7 +15,7 @@ const StyledMenuToggle = styled(MenuToggle)`
 `;
 
 const Form = styled.div`
-  align-items: flex-end;
+  align-items: center;
   display: flex;
   height: 100%;
   justify-content: center;

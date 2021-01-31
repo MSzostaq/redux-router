@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
 import { SizeMe } from "react-sizeme";
+import { motion } from "framer-motion";
 import OutsideClickHandler from "react-outside-click-handler";
 import Icon from "components/Icon";
 import Modal from "components/Modal";
@@ -35,7 +36,7 @@ const CaretIcon = styled(Icon)`
   height: 24px;
 `;
 
-const Items = styled.ul`
+const Items = styled(motion.ul)`
   background-color: #fff;
   border-radius: 4px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
@@ -126,7 +127,12 @@ function Dropdown({ className, items, onChange, value }) {
           <OutsideClickHandler onOutsideClick={onClickOutside}>
             <SizeMe monitorHeight noPlaceholder>
               {({ size }) => (
-                <Items style={getItemsStyle(size)}>
+                <Items
+                  style={getItemsStyle(size)}
+                  initial={{ y: -10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ type: "tween", duration: 0.2, ease: "circOut" }}
+                >
                   {items.map((item) => (
                     <Item
                       key={item.id}
