@@ -3,6 +3,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import styled from "styled-components";
 import Sidebar from "components/Sidebar";
 import DropdownView from "views/DropdownView";
+import ModalView from "views/ModalView";
 import ToggleView from "views/ToggleView";
 
 const ViewWrapper = styled.div`
@@ -24,6 +25,9 @@ function Dashboard() {
           </Route>
           <Route path="/dropdown">
             <DropdownView />
+          </Route>
+          <Route path="/modal">
+            <ModalView />
           </Route>
           <Redirect to="/toggle" />
         </Switch>

@@ -53,6 +53,9 @@ const Sidebar = () => {
       <StyledButton as={Link} to="/dropdown">
         Dropdown
       </StyledButton>
+      <StyledButton as={Link} to="/modal">
+        Modal
+      </StyledButton>
     </StyledSidebar>
   ) : null;
 };
