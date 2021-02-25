@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef } from "react";
 import styled from "styled-components";
 
 const View = styled.div`
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +17,6 @@ const ModalWrapper = styled.div`
   box-shadow: 0 4px 16px rgba(0, 0, 0 0.2);
   color: #000;
   display: flex;
-  flex-direction-columns: 1fr 1fr;
   position: relative;
   width: 800px;
   height: 420px;
