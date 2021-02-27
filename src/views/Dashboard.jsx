@@ -2,6 +2,7 @@ import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import styled from "styled-components";
 import Sidebar from "components/Sidebar";
+import DogView from "views/DogView";
 import DropdownView from "views/DropdownView";
 import ModalView from "views/ModalView";
 import ToggleView from "views/ToggleView";
@@ -28,6 +29,9 @@ function Dashboard() {
           </Route>
           <Route path="/modal">
             <ModalView />
+          </Route>
+          <Route path="/dog">
+            <DogView />
           </Route>
           <Redirect to="/toggle" />
         </Switch>

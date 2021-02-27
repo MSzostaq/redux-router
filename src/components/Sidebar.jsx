@@ -56,6 +56,9 @@ const Sidebar = () => {
       <StyledButton as={Link} to="/modal">
         Modal
       </StyledButton>
+      <StyledButton as={Link} to="/dog">
+        Dogs
+      </StyledButton>
     </StyledSidebar>
   ) : null;
 };

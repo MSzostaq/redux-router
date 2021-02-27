@@ -22,7 +22,7 @@ const ModalWrapper = styled.div`
   height: 420px;
 `;
 
-function Modal1({ showModal, setShowModal }) {
+function Popup({ showModal, setShowModal }) {
   const modalRef = useRef();
 
   const closeModal = (e) => {
@@ -42,4 +42,4 @@ function Modal1({ showModal, setShowModal }) {
   );
 }
 
-export default Modal1;
+export default Popup;

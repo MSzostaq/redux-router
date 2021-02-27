@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Button from "components/Button";
 import MenuToggle from "components/MenuToggle";
-import Modal1 from "components/Modal1";
+import Popup from "components/Popup";
 
 const View = styled.div`
   background-color: #f9f9f9;
@@ -14,7 +14,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
 `;
 
 const StyledButton = styled(Button)`
@@ -42,7 +42,7 @@ function ModalView() {
         <StyledMenuToggle />
         <Container>
           <StyledButton onClick={openModal}>Modal</StyledButton>
-          <Modal1 showModal={showModal} setShowModal={setShowModal} />
+          <Popup showModal={showModal} setShowModal={setShowModal} />
         </Container>
       </View>
     </>
