@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Button from "components/Button";
 import MenuToggle from "components/MenuToggle";
-import Popup from "components/Popup";
+import Modal from "components/Modal";
+import Popup from "popups/Popup";
 
 const View = styled.div`
   background-color: #f9f9f9;
@@ -19,6 +20,7 @@ const Container = styled.div`
 
 const StyledButton = styled(Button)`
   background-color: #141414;
+  border-radius: 4px;
   color: #fff;
   font-size: 24px;
 `;
@@ -41,8 +43,12 @@ function ModalView() {
       <View>
         <StyledMenuToggle />
         <Container>
-          <StyledButton onClick={openModal}>Modal</StyledButton>
-          <Popup showModal={showModal} setShowModal={setShowModal} />
+          <StyledButton onClick={openModal}>Popup</StyledButton>
+          {showModal && (
+            <Modal>
+              <Popup onClose={() => setShowModal(false)} />
+            </Modal>
+          )}
         </Container>
       </View>
     </>

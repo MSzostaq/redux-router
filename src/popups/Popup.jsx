@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 
-const View = styled.div`
+const Overlay = styled.div`
   background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
@@ -11,7 +11,7 @@ const View = styled.div`
   height: 100%;
 `;
 
-const ModalWrapper = styled.div`
+const Content = styled.div`
   background-color: #f8f8f8;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0 0.2);
@@ -22,24 +22,23 @@ const ModalWrapper = styled.div`
   height: 420px;
 `;
 
-function Popup({ showModal, setShowModal }) {
+function Popup({ onClose }) {
   const modalRef = useRef();
 
   const closeModal = (e) => {
     if (modalRef.current === e.target) {
-      setShowModal(false);
+      onClose();
     }
   };
 
   return (
-    <>
-      {showModal ? (
-        <View onClick={closeModal} ref={modalRef}>
-          <ModalWrapper showModal={showModal}></ModalWrapper>
-        </View>
-      ) : null}
-    </>
+    <Overlay onClick={closeModal} ref={modalRef}>
+      <Content></Content>
+    </Overlay>
   );
 }
 
 export default Popup;
+
+// TODO
+// outsideclickhandler -> onClose(popup)

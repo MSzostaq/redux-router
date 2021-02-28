@@ -54,7 +54,7 @@ const Sidebar = () => {
         Dropdown
       </StyledButton>
       <StyledButton as={Link} to="/modal">
-        Modal
+        Popup
       </StyledButton>
       <StyledButton as={Link} to="/dog">
         Dogs
