@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Sidebar from "components/Sidebar";
 import DogView from "views/DogView";
 import DropdownView from "views/DropdownView";
-import ModalView from "views/ModalView";
+import PopupView from "views/PopupView";
 import ToggleView from "views/ToggleView";
 
 const ViewWrapper = styled.div`
@@ -27,8 +27,8 @@ function Dashboard() {
           <Route path="/dropdown">
             <DropdownView />
           </Route>
-          <Route path="/modal">
-            <ModalView />
+          <Route path="/popup">
+            <PopupView />
           </Route>
           <Route path="/dog">
             <DogView />

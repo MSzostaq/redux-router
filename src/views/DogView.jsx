@@ -49,7 +49,9 @@ function DogView() {
         <StyledMenuToggle />
         <Container>
           <Image src={src} />
-          <Button onClick={onButtonClick}>Get a dog!</Button>
+          <Button onClick={onButtonClick} whileTap={{ scale: 0.95 }}>
+            Get a dog!
+          </Button>
         </Container>
       </View>
     </>

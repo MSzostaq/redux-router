@@ -1,5 +1,8 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+// import OutsideClickHandler from "react-outside-click-handler";
+import Icon from "components/Icon";
 
 const Overlay = styled.div`
   background-color: rgba(0, 0, 0, 0.3);
@@ -11,15 +14,22 @@ const Overlay = styled.div`
   height: 100%;
 `;
 
-const Content = styled.div`
+const CloseButton = styled(Icon)`
+  color: #bdbdbd;
+  cursor: pointer;
+  position: fixed;
+  width: 48px;
+  height: 48px;
+`;
+
+const Content = styled(motion.div)`
   background-color: #f8f8f8;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0 0.2);
   color: #000;
-  display: flex;
   position: relative;
-  width: 800px;
-  height: 420px;
+  width: 900px;
+  height: 540px;
 `;
 
 function Popup({ onClose }) {
@@ -33,12 +43,11 @@ function Popup({ onClose }) {
 
   return (
     <Overlay onClick={closeModal} ref={modalRef}>
-      <Content></Content>
+      <Content animate={{ scale: 1.1 }} transition={{ type: "spring" }}>
+        <CloseButton icon="close" onClick={onClose} />
+      </Content>
     </Overlay>
   );
 }
 
 export default Popup;
-
-// TODO
-// outsideclickhandler -> onClose(popup)

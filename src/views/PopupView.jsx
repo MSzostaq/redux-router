@@ -18,20 +18,13 @@ const Container = styled.div`
   height: 100%;
 `;
 
-const StyledButton = styled(Button)`
-  background-color: #141414;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 24px;
-`;
-
 const StyledMenuToggle = styled(MenuToggle)`
   position: absolute;
   top: 0;
   left: 0;
 `;
 
-function ModalView() {
+function PopupView() {
   const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {
@@ -43,7 +36,9 @@ function ModalView() {
       <View>
         <StyledMenuToggle />
         <Container>
-          <StyledButton onClick={openModal}>Popup</StyledButton>
+          <Button onClick={openModal} whileTap={{ scale: 0.95 }}>
+            Popup
+          </Button>
           {showModal && (
             <Modal>
               <Popup onClose={() => setShowModal(false)} />
@@ -55,4 +50,4 @@ function ModalView() {
   );
 }
 
-export default ModalView;
+export default PopupView;

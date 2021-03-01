@@ -53,7 +53,7 @@ const Sidebar = () => {
       <StyledButton as={Link} to="/dropdown">
         Dropdown
       </StyledButton>
-      <StyledButton as={Link} to="/modal">
+      <StyledButton as={Link} to="/popup">
         Popup
       </StyledButton>
       <StyledButton as={Link} to="/dog">
