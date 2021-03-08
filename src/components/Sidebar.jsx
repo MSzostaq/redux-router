@@ -40,11 +40,12 @@ const StyledButton = styled(Button)`
 
 const Sidebar = () => {
   const { isMenuOpen, toggleMenu } = useContext(GlobalContext);
+
   return isMenuOpen ? (
     <StyledSidebar
       initial={{ x: -280 }}
       animate={{ x: 0 }}
-      transition={{ duration: 0.4 }}
+      transition={{ ease: "easeIn", duration: 0.3 }}
     >
       <CloseButton icon="close" onClick={() => toggleMenu(false)} />
       <StyledButton as={Link} to="/toggle">
